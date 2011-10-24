@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<JeopardyBoard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.mvysin.com/Jeopardy/Clues/2">
+  <PointValues>
+    <Value>100</Value>
+    <Value>200</Value>
+    <Value>300</Value>
+    <Value>400</Value>
+    <Value>500</Value>
+    <Value>600</Value>
+  </PointValues>
+  <Category>
+    <Name>Get Legal</Name>
+    <Clue>
+      <Question>ASUCLA and the Center for Student Programming get a commission if you buy music from this online store</Question>
+      <Answer>Apple iTunes</Answer>
+      <Source>http://getlegal.ucla.edu</Source>
+    </Clue>
+    <Clue>
+      <Question>You can get free music to play on your computer from this online service</Question>
+      <Answer>Ruckus</Answer>
+      <Source>http://getlegal.ucla.edu</Source>
+    </Clue>
+    <Clue>
+      <Question>Like making music?  Students can distribute their own music for free using this service</Question>
+      <Answer>Mindawn</Answer>
+      <Source>http://getlegal.ucla.edu</Source>
+    </Clue>
+    <Clue>
+      <Question>This service will give students fast, free, and legal access to certain movies</Question>
+      <Answer>Ruckus</Answer>
+      <Source>http://getlegal.ucla.edu</Source>
+    </Clue>
+    <Clue>
+      <Question>This is the law that makes downloading copyrighted content illegal</Question>
+      <Answer>Digital Millennium Copyright Act</Answer>
+      <Source>http://getlegal.ucla.edu</Source>
+    </Clue>
+  </Category>
+  <Category>
+    <Name>The Beatles</Name>
+    <Clue>
+      <Question>The city in England where the Beatles originated</Question>
+      <Answer>Liverpool</Answer>
+    </Clue>
+    <Clue>
+      <Question>The Beatles' first #1 hit in the United States</Question>
+      <Answer>"I Want to Hold Your Hand"</Answer>
+    </Clue>
+    <Clue>
+      <Question>He was the youngest member of the Beatles</Question>
+      <Answer>George Harrison</Answer>
+    </Clue>
+    <Clue>
+      <Question>The member who left in 1970 due to personal, business, and musical differences</Question>
+      <Answer>Paul McCartney</Answer>
+    </Clue>
+    <Clue>
+      <Question>The man who murdered John Lennon as he and his wife were returning from a recording session</Question>
+      <Answer>Mark David Chapman</Answer>
+    </Clue>
+  </Category>
+  <Category>
+    <Name>The 80s</Name>
+    <Clue>
+      <Question>This 'material girl' made her debut in 1982</Question>
+      <Answer>Madonna</Answer>
+    </Clue>
+    <Clue>
+      <Question>This album, released by Michael Jackson in 1982, is the biggest-selling album of all time. Oh yeah? Yeah!</Question>
+      <Answer>Thriller</Answer>
+    </Clue>
+    <Clue>
+      <Question>This 1984 Prince album sold more than thirteen million copies in the US</Question>
+      <Answer>Purple Rain</Answer>
+    </Clue>
+    <Clue>
+      <Question>This artist is best known for his 1984 album "Born in the USA"</Question>
+      <Answer>Bruce Springsteen</Answer>
+    </Clue>
+    <Clue>
+      <Question>This band's 1986 album "Raising Hell" is the highest-selling rap album in history</Question>
+      <Answer>Run-D.M.C.</Answer>
+    </Clue>
+  </Category>
+  <Category>
+    <Name>Pop Music</Name>
+    <Clue>
+      <Question>He is considered the King of Pop Music</Question>
+      <Answer>Michael Jackson</Answer>
+    </Clue>
+    <Clue>
+      <Question>This American boy band, regarded as one of the most successful pop acts of all time, featured Justin Timberlake as a lead singer</Question>
+      <Answer>NSYNC</Answer>
+    </Clue>
+    <Clue>
+      <Question>This artist earned a Grammy Award for her track "Believe" in 1998</Question>
+      <Answer>Cher</Answer>
+    </Clue>
+    <Clue>
+      <Question>This Canadian singer has scored five number one songs worldwide</Question>
+      <Answer>Avril Lavigne</Answer>
+    </Clue>
+    <Clue>
+      <Question>This American pop singer was the runner-up to Taylor Hicks in the 5th season of American Idol</Question>
+      <Answer>Katherine McPhee</Answer>
+    </Clue>
+  </Category>
+  <Category>
+    <Name>Music of '00</Name>
+    <Clue>
+      <Question>Answer this Timbaland hit song, and 'you could get a tip'</Question>
+      <Answer>The Way I Are</Answer>
+    </Clue>
+    <Clue>
+      <Question>This 2007 hit single by the Plain White T's was actually released in 2006</Question>
+      <Answer>Hey There Delilah</Answer>
+    </Clue>
+    <Clue>
+      <Question>"Everyone's a Little Bit Racist" and "I'm Not Wearing Underwear Today" are songs from this 2003 Broadway musical</Question>
+      <Answer>Avenue Q</Answer>
+    </Clue>
+    <Clue>
+      <Question>This Grammy award winning Coldplay single holds the record for being the most-downloaded iTunes song</Question>
+      <Answer>Clocks</Answer>
+    </Clue>
+    <Clue>
+      <Question>This former American Idol contestant's song was used on the show's next season for those singers who were sent "Home"</Question>
+      <Answer>Chris Daughtry</Answer>
+    </Clue>
+  </Category>
+  <Category>
+    <Name>Is it Legal?</Name>
+    <Clue>
+      <Question>Buying music from the iTunes store</Question>
+      <Answer>Yes</Answer>
+    </Clue>
+    <Clue>
+      <Question>Sharing iTunes libraries over UCLA ResNet</Question>
+      <Answer>No</Answer>
+    </Clue>
+    <Clue>
+      <Question>BitTorrent</Question>
+      <Answer>Yes, for non-copyrighted content</Answer>
+    </Clue>
+    <Clue>
+      <Question>Make a personal backup copy of purchased music</Question>
+      <Answer>Yes</Answer>
+      <Source>http://getlegal.ucla.edu</Source>
+    </Clue>
+    <Clue>
+      <Question>Remove Digital Rights Management or 'Unlock' purchased music</Question>
+      <Answer>No</Answer>
+    </Clue>
+  </Category>
+</JeopardyBoard>

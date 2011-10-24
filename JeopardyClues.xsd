@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema targetNamespace="http://schemas.mvysin.com/Jeopardy/Clues/2"
+           elementFormDefault="qualified"
+           xmlns="http://schemas.mvysin.com/Jeopardy/Clues/2"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="PointValues">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Value" type="xs:float" minOccurs="0" maxOccurs="6" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Clue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Question" type="xs:string" minOccurs="1" maxOccurs="1" />
+        <xs:element name="Answer" type="xs:string" minOccurs="1" maxOccurs="1" />
+        <xs:element name="Source" type="xs:string" minOccurs="0" maxOccurs="1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="Category">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+        <xs:element ref="Clue" minOccurs="1" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="JeopardyBoard">
+    <xs:complexType>
+      <xs:sequence>
+          <xs:element ref="PointValues" minOccurs="0" maxOccurs="1" />
+          <xs:element ref="Category" minOccurs="1" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+</xs:schema>

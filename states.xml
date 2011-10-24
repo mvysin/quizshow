@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<JeopardyBoard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.mvysin.com/Jeopardy/Clues/2">
+  <PointValues>
+    <Value>100</Value>
+    <Value>200</Value>
+    <Value>300</Value>
+    <Value>400</Value>
+    <Value>500</Value>
+  </PointValues>
+  <Category>
+    <Name>Name That State</Name>
+    <Clue>
+      <Question>This east-coast state is home to JFK International Airport and the Empire State Building.</Question>
+      <Answer>New York</Answer>
+    </Clue>
+    <Clue>
+      <Question>The Space Needle finds its home in this west-coast state</Question>
+      <Answer>Washington</Answer>
+    </Clue>
+    <Clue>
+      <Question>This state was once a "Lone" republic independent of the United States</Question>
+      <Answer>Texas</Answer>
+    </Clue>
+    <Clue>
+      <Question>Because of its favorable tax law, many corporations make this state their home</Question>
+      <Answer>Delaware</Answer>
+    </Clue>
+    <Clue>
+      <Question>This state is home to Parkfield, which is the most-studied earthquake fault in the United States</Question>
+      <Answer>California</Answer>
+    </Clue>
+  </Category>
+  <Category>
+    <Name>A Capital Idea</Name>
+    <Clue>
+      <Question>Michigan</Question>
+      <Answer>Detroit</Answer>
+    </Clue>
+    <Clue>
+      <Question>Oklahoma</Question>
+      <Answer>Oklahoma City</Answer>
+    </Clue>
+    <Clue>
+      <Question>Mississippi</Question>
+      <Answer>Jackson</Answer>
+    </Clue>
+    <Clue>
+      <Question>North Dakota</Question>
+      <Answer>Bismarck</Answer>
+    </Clue>
+    <Clue>
+      <Question>Wyoming</Question>
+      <Answer>Cheyenne</Answer>
+    </Clue>
+  </Category>
+  <Category>
+    <Name>National Park Place</Name>
+    <Clue>
+      <Question>Yosemite</Question>
+      <Answer>California</Answer>
+    </Clue>
+    <Clue>
+      <Question>Yellowstone</Question>
+      <Answer>Wyoming</Answer>
+    </Clue>
+    <Clue>
+      <Question>Denali National Park</Question>
+      <Answer>Alaska</Answer>
+    </Clue>
+    <Clue>
+      <Question>Niagara Falls</Question>
+      <Answer>New York</Answer>
+    </Clue>
+    <Clue>
+      <Question>Carlsbad Caverns</Question>
+      <Answer>New Mexico</Answer>
+    </Clue>
+  </Category>
+  <Category>
+    <Name>Political Pundit Pile</Name>
+    <Clue>
+      <Question>Aired on over 500 stations and heard by more than 15 million weekly, he hosts the #1-ranked radio talk show</Question>
+      <Answer>Rush Limbaugh</Answer>
+    </Clue>
+    <Clue>
+      <Question>He "report"s on the political news of the day in a satire that some say is more informative than the normal news shows</Question>
+      <Answer>Stephen Colbert</Answer>
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+  </Category>
+  <Category>
+    <Name>The West Wood</Name>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+  </Category>
+  <Category>
+    <Name>State that Name</Name>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+  </Category>
+</JeopardyBoard>

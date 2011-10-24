@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<JeopardyBoard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.mvysin.com/Jeopardy/Clues/2">
+  <PointValues>
+    <Value>100</Value>
+    <Value>200</Value>
+    <Value>300</Value>
+    <Value>400</Value>
+    <Value>500</Value>
+  </PointValues>
+  <Category>
+    <Name>THINGS KIDS LIKE</Name>
+    <Clue>
+      <Question>"I love you,
+You love me,
+We're a happy family"
+Who are we?</Question>
+      <Answer>Barney &amp; Friends</Answer>
+    </Clue>
+    <Clue>
+      <Question>It's a beautiful day in the ______
+
+(12 letters)</Question>
+      <Answer>Neighborhood</Answer>
+    </Clue>
+    <Clue>
+      <Question>One is a genius, the other's _______
+
+(6 letters)</Question>
+      <Answer>Insane</Answer>
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+  </Category>
+  <Category>
+    <Name />
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+  </Category>
+  <Category>
+    <Name />
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+  </Category>
+  <Category>
+    <Name />
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+  </Category>
+  <Category>
+    <Name />
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+  </Category>
+  <Category>
+    <Name />
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+    <Clue>
+      <Question />
+      <Answer />
+    </Clue>
+  </Category>
+</JeopardyBoard>
