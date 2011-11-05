@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace Jeopardy
+namespace Vysin.QuizShow
 {
     [StructLayout(LayoutKind.Sequential)]
     struct RECT
@@ -82,12 +82,11 @@ namespace Jeopardy
 
         protected override void OnControlAdded(ControlEventArgs e)
         {
-            e.Control.ControlAdded += delegate(object s, ControlEventArgs ea)
-            {
+            e.Control.ControlAdded += delegate(object s, ControlEventArgs ea) {
                 OnControlAdded(ea);
             };
-            e.Control.MouseMove += delegate(object s, MouseEventArgs me)
-            {
+
+            e.Control.MouseMove += delegate(object s, MouseEventArgs me) {
                 Point pt = ((Control)s).PointToScreen(me.Location);
                 pt = PointToClient(pt);
                 OnMouseMove(new MouseEventArgs(me.Button, me.Clicks, pt.X, pt.Y, me.Delta));

@@ -2,7 +2,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Jeopardy
+namespace Vysin.QuizShow
 {
     class GameWin : FullScreenWin
     {
@@ -10,7 +10,7 @@ namespace Jeopardy
 
         public GameWin()
         {
-            Text = "Jeopardy! Game";
+            Text = "Quiz Show Presenter : Game View";
             ClientSize = new Size(1024, 768);
 
             view = new GameBoardView();

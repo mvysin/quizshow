@@ -5,11 +5,11 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
-namespace Jeopardy
+namespace Vysin.QuizShow
 {
-    class Jeopardy
+    class QuizShow
     {
-        private static JeopardyBoard board;
+        private static Board board;
         private static ResourceFontCollection fonts;
 
         [STAThread]
@@ -38,7 +38,7 @@ namespace Jeopardy
             }
         }
 
-        public static JeopardyBoard Board
+        public static Board Board
         {
             get { return board; }
             set { board = value; }

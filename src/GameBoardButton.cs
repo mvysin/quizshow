@@ -3,7 +3,7 @@ using System.Collections.Specialized;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Jeopardy
+namespace Vysin.QuizShow
 {
     public class GameBoardButton
     {

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<JeopardyBoard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.mvysin.com/Jeopardy/Clues/2">
+<Board xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.mvysin.com/QuizShow/2">
   <PointValues>
     <Value>100</Value>
     <Value>200</Value>
@@ -152,4 +152,4 @@ Who are we?</Question>
       <Answer />
     </Clue>
   </Category>
-</JeopardyBoard>
+</Board>

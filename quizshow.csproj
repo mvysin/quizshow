@@ -8,8 +8,8 @@
     <ProjectGuid>{11E087EA-1B10-45CE-BD04-20EFFCF8F2F6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Jeopardy</RootNamespace>
-    <AssemblyName>Jeopardy</AssemblyName>
+    <RootNamespace>Vysin.QuizShow</RootNamespace>
+    <AssemblyName>QuizShowPresenter</AssemblyName>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
@@ -64,7 +64,7 @@
       <SubType>Designer</SubType>
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Jeopardy</CustomToolNamespace>
+      <CustomToolNamespace>Vysin.QuizShow</CustomToolNamespace>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -103,8 +103,8 @@
     <Compile Include="src\SelectWindowForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="xsd\JeopardyClues.cs">
-      <DependentUpon>JeopardyClues.xsd</DependentUpon>
+    <Compile Include="xsd\QuizShow.cs">
+      <DependentUpon>QuizShow.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -115,10 +115,13 @@
     <Content Include="sample\states.xml" />
     <Content Include="sample\test.xml" />
     <Content Include=".gitignore" />
+    <None Include="README.md" />
     <None Include="rsrc\enchanted.ttf" />
-    <None Include="xsd\JeopardyClues.xsd">
+    <EmbeddedResource Include="xsd\QuizShow.xsd">
       <SubType>Designer</SubType>
-    </None>
+      <LastGenOutput>QuizShow.Designer.cs</LastGenOutput>
+      <Generator>XSD.exe</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

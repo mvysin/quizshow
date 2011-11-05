@@ -4,7 +4,7 @@ using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace Jeopardy
+namespace Vysin.QuizShow
 {
     public enum NotifyAction
     {
@@ -48,11 +48,11 @@ namespace Jeopardy
         }
     }
 
-    public partial class JeopardyBoard
+    public partial class Board
     {
         List<WeakReference> views = new List<WeakReference>();
 
-        public JeopardyBoard()
+        public Board()
         {
             categoryField = new Category[6];
             for (int i = 0; i < 6; i++)

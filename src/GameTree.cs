@@ -5,7 +5,7 @@ using System.Security;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
-namespace Jeopardy
+namespace Vysin.QuizShow
 {
     [SuppressUnmanagedCodeSecurity]
     internal class SafeNativeMethods

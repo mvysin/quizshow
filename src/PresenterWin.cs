@@ -2,7 +2,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Jeopardy
+namespace Vysin.QuizShow
 {
     class PresenterWin : FullScreenWin, IBoardView
     {
@@ -12,7 +12,7 @@ namespace Jeopardy
 
         public PresenterWin()
         {
-            Text = "Jeopardy! Manager";
+            Text = "Quiz Show Presenter : Manager View";
             ClientSize = new Size(1024, 768);
 
             view = new GameBoardView();
@@ -26,7 +26,7 @@ namespace Jeopardy
             lblAnswer.UseMnemonic = false;
             Controls.Add(lblAnswer);
 
-            Jeopardy.Board.AddView(this);
+            QuizShow.Board.AddView(this);
             OnSizeChanged(EventArgs.Empty);
         }
 
@@ -34,7 +34,7 @@ namespace Jeopardy
         {
             if (a == NotifyAction.DisplayClue)
             {
-                lblAnswer.Text = Jeopardy.Board.Category[x].Clue[y].Answer;
+                lblAnswer.Text = QuizShow.Board.Category[x].Clue[y].Answer;
                 lblAnswer.Visible = true;
             }
             else if (a == NotifyAction.DisplayBoard)

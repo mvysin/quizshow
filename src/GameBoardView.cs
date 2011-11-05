@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Jeopardy
+namespace Vysin.QuizShow
 {
     enum GameBoardViewMode
     {
@@ -30,7 +30,7 @@ namespace Jeopardy
         {
             this.MinimumSize = new Size(4*250/3, 250);
 
-            Jeopardy.Board.AddView(this);
+            QuizShow.Board.AddView(this);
 
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             SetStyle(ControlStyles.UserPaint, true);
@@ -42,6 +42,8 @@ namespace Jeopardy
 
             BackColor = Color.FromArgb(240, 200, 70);
             ClueBackColor = Color.Blue;
+
+            Board board = QuizShow.Board;
 
             for (int x = 0; x < 6; x++)
             {
@@ -55,12 +57,12 @@ namespace Jeopardy
                     btnPoints.Add(b, new Point(x, y));
 
                     if (y >= 0)
-                        b.Text = Jeopardy.Board.PointValues[y].ToString();
+                        b.Text = board.PointValues[y].ToString();
                     else
                     {
-                        if (x < Jeopardy.Board.Category.Length)
-                            b.Text = Jeopardy.Board.Category[x].Name;
-                        Jeopardy.Board.Category[x].PropertyChanged += new PropertyChangedEventHandler(WeakItemChanged);
+                        if (x < board.Category.Length)
+                            b.Text = board.Category[x].Name;
+                        board.Category[x].PropertyChanged += new PropertyChangedEventHandler(WeakItemChanged);
                     }
 
                     btns[x, y+1] = b;
@@ -96,9 +98,9 @@ namespace Jeopardy
         private void CluePanelClick()
         {
             if (!ShowAnswer)
-                Jeopardy.Board.NotifyViews(NotifyAction.DisplayAnswer, 0, 0);
+                QuizShow.Board.NotifyViews(NotifyAction.DisplayAnswer, 0, 0);
             else
-                Jeopardy.Board.NotifyViews(NotifyAction.DisplayBoard, 0, 0);
+                QuizShow.Board.NotifyViews(NotifyAction.DisplayBoard, 0, 0);
         }
 
         public bool DisplayingBoard
@@ -145,10 +147,8 @@ namespace Jeopardy
             {
                 for (int clue = 0; clue < 5; clue++)
                 {
-                    if (Jeopardy.Board.Category[cat].Clue[clue] == c)
-                    {
-                        Jeopardy.Board.NotifyViews(NotifyAction.ButtonClicked, cat, clue);
-                    }
+                    if (QuizShow.Board.Category[cat].Clue[clue] == c)
+                        QuizShow.Board.NotifyViews(NotifyAction.ButtonClicked, cat, clue);
                 }
             }
         }
@@ -218,11 +218,11 @@ namespace Jeopardy
                 if (!Editable)
                     btns[x, y+1].Active = false;
                 if (y >= 0)
-                    Jeopardy.Board.NotifyViews(NotifyAction.DisplayClue, x, y);
+                    QuizShow.Board.NotifyViews(NotifyAction.DisplayClue, x, y);
             }
             else if (a == NotifyAction.DisplayClue)
             {
-                SelectedClue = Jeopardy.Board.Category[x].Clue[y];
+                SelectedClue = QuizShow.Board.Category[x].Clue[y];
                 Mode = GameBoardViewMode.Clue;
             }
             else if (a == NotifyAction.DisplayAnswer)
@@ -246,7 +246,7 @@ namespace Jeopardy
             Point pt = btnPoints[(GameBoardButton)sender];
             if (pt.Y < 0 && !Editable)
                 return;
-            Jeopardy.Board.NotifyViews(NotifyAction.ButtonClicked, pt.X, pt.Y);
+            QuizShow.Board.NotifyViews(NotifyAction.ButtonClicked, pt.X, pt.Y);
         }
 
         private void OnBoardButtonTrackChange(object sender, EventArgs e)
@@ -256,10 +256,10 @@ namespace Jeopardy
             if (b.Tracking)
             {
                 Point pt = btnPoints[b];
-                Jeopardy.Board.NotifyViews(NotifyAction.TrackButtonChanged, pt.X, pt.Y);
+                QuizShow.Board.NotifyViews(NotifyAction.TrackButtonChanged, pt.X, pt.Y);
             }
             else
-                Jeopardy.Board.NotifyViews(NotifyAction.TrackButtonChanged, -1, -1);
+                QuizShow.Board.NotifyViews(NotifyAction.TrackButtonChanged, -1, -1);
         }
 
         protected override void OnGotFocus(EventArgs e)
@@ -540,7 +540,7 @@ namespace Jeopardy
             int h = contentRect.Height;
             int margin = h / 20;
 
-            Font clueFont = new Font(Jeopardy.GetPrivateFont("Enchanted"), h / 11, FontStyle.Bold, GraphicsUnit.Pixel);
+            Font clueFont = new Font(QuizShow.GetPrivateFont("Enchanted"), h / 11, FontStyle.Bold, GraphicsUnit.Pixel);
             Font answerFont = new Font("Calibri", h / 20, FontStyle.Bold, GraphicsUnit.Pixel);
             Font sourceFont = new Font("Calibri", margin / 2, FontStyle.Regular, GraphicsUnit.Pixel);
 
@@ -666,8 +666,9 @@ namespace Jeopardy
                 Refresh();
             else if (sender is Category)
             {
+                Board board = QuizShow.Board;
                 for (int i = 0; i < 6; i++)
-                    btns[i, 0].Text = Jeopardy.Board.Category[i].Name;
+                    btns[i, 0].Text = board.Category[i].Name;
             }
         }
     }

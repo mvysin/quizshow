@@ -5,7 +5,7 @@ using System.Drawing.Text;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace Jeopardy
+namespace Vysin.QuizShow
 {
     class ResourceFontCollection : IDisposable
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Jeopardy
+namespace Vysin.QuizShow
 {
     class SelectWindowForm : Form
     {
@@ -22,7 +22,7 @@ namespace Jeopardy
             SuspendLayout();
             AutoScaleMode = AutoScaleMode.Dpi;
             AutoScaleDimensions = new SizeF(96, 96);
-            Text = "Jeopardy | Select Window Layout";
+            Text = "Quiz Show Presenter : Select Window Layout";
             ClientSize = new Size(600, 400);
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
 

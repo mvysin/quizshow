@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<xs:schema targetNamespace="http://schemas.mvysin.com/Jeopardy/Clues/2"
+<xs:schema targetNamespace="http://schemas.mvysin.com/QuizShow/2"
            elementFormDefault="qualified"
-           xmlns="http://schemas.mvysin.com/Jeopardy/Clues/2"
+           xmlns="http://schemas.mvysin.com/QuizShow/2"
            xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
   <xs:element name="PointValues">
@@ -31,7 +31,7 @@
     </xs:complexType>
   </xs:element>
   
-  <xs:element name="JeopardyBoard">
+  <xs:element name="Board">
     <xs:complexType>
       <xs:sequence>
           <xs:element ref="PointValues" minOccurs="0" maxOccurs="1" />

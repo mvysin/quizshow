@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
-namespace Jeopardy
+namespace Vysin.QuizShow
 {
     enum EditMode
     {
@@ -202,23 +203,23 @@ namespace Jeopardy
         private void DoAbout()
         {
             MessageBox.Show(this,
-                "Jeopardy! Version " + Application.ProductVersion + "\r\n" +
-                "Copyright (c) 2009 " + Application.CompanyName + "\r\n\r\n" +
+                "Quiz Show Presenter Version " + Application.ProductVersion + "\r\n" +
+                "Copyright (c) 2011 " + Application.CompanyName + "\r\n\r\n" +
                 Environment.OSVersion.VersionString + "\r\n" +
                 "Microsoft .NET Framework Version " + Environment.Version.ToString() + "\r\n\r\n" +
-                "For more information, visit http://www.mvysin.com/sw/jeopardy",
+                "For more information, visit http://mvysin.com/projects/quizshow",
                 Application.ProductName);
         }
 
         private bool DoClose()
         {
-            if (Jeopardy.Board == null)
+            if (QuizShow.Board == null)
                 return true;
 
             if (IsDirty)
             {
                 DialogResult dr = MessageBox.Show(this, "Do you want to save changes to " + CurrentDocName + " before closing?",
-                    "Jeopardy!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    Application.ProductName, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                 if (dr == DialogResult.Cancel)
                     return false;
                 else if (dr == DialogResult.Yes)
@@ -230,7 +231,7 @@ namespace Jeopardy
 
             view.Dispose();
             view = null;
-            Jeopardy.Board = null;
+            QuizShow.Board = null;
 
             CurrentFileName = null;
             IsDirty = false;
@@ -285,27 +286,27 @@ namespace Jeopardy
         private bool DoLoad(string filename)
         {
             if (filename == null)
-                Jeopardy.Board = new JeopardyBoard();
+                QuizShow.Board = new Board();
             else
             {
                 try
                 {
                     using (FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.Read))
                     {
-                        XmlSerializer xs = new XmlSerializer(typeof(JeopardyBoard));
-                        Jeopardy.Board = (JeopardyBoard)xs.Deserialize(fs);
+                        XmlSerializer xs = new XmlSerializer(typeof(Board));
+                        QuizShow.Board = (Board)xs.Deserialize(fs);
                     }
                 }
                 catch (InvalidOperationException e)
                 {
-                    MessageBox.Show(this, "The document you selected is not a valid Jeopardy board\n\n" +
+                    MessageBox.Show(this, "The document you selected is not a valid board\n\n" +
                         "Reason: " + e.Message,
                         Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
 
-            Jeopardy.Board.AddView(this);
+            QuizShow.Board.AddView(this);
 
             view = new GameBoardView();
             view.Editable = true;
@@ -377,8 +378,8 @@ namespace Jeopardy
 
             using (FileStream fs = new FileStream(CurrentFileName, FileMode.Create, FileAccess.Write, FileShare.None))
             {
-                XmlSerializer xs = new XmlSerializer(typeof(JeopardyBoard));
-                xs.Serialize(fs, Jeopardy.Board);
+                XmlSerializer xs = new XmlSerializer(typeof(Board));
+                xs.Serialize(fs, QuizShow.Board);
             }
 
             mruFiles.AddFile(CurrentFileName);
@@ -390,12 +391,12 @@ namespace Jeopardy
         private void DoUpdateCheck()
         {
             MessageBox.Show(this, "Automatic updates not yet implemented.\n" +
-                "Please visit http://www.mvysin.com/jeopardy for the latest version.");
+                "Please visit http://mvysin.com/projects/quizshow for the latest version.");
         }
 
         private void EditDoneClick()
         {
-            Jeopardy.Board.NotifyViews(NotifyAction.DisplayBoard, 0, 0);
+            QuizShow.Board.NotifyViews(NotifyAction.DisplayBoard, 0, 0);
         }
 
         private EditMode EditMode
@@ -428,7 +429,7 @@ namespace Jeopardy
 
         private bool HasDocument
         {
-            get { return Jeopardy.Board != null; }
+            get { return QuizShow.Board != null; }
         }
 
         private bool IsDirty
@@ -475,6 +476,8 @@ namespace Jeopardy
 
         public void Notify(NotifyAction a, int x, int y)
         {
+            Board board = QuizShow.Board;
+
             if (a == NotifyAction.ButtonClicked)
             {
                 view.SetSelected(x, y);
@@ -483,16 +486,16 @@ namespace Jeopardy
                 if (y < 0)
                 {
                     EditMode = EditMode.Category;
-                    SelectedCategory = Jeopardy.Board.Category[x];
+                    SelectedCategory = board.Category[x];
                     lblWhat.Text = "Category " + (x + 1).ToString();
                     tbAnswer.Focus();
                 }
                 else
                 {
                     EditMode = EditMode.Clue;
-                    SelectedClue = Jeopardy.Board.Category[x].Clue[y];
-                    lblWhat.Text = "\"" + Jeopardy.Board.Category[x].Name + "\" -> $"
-                        + Jeopardy.Board.PointValues[y] + " Clue";
+                    SelectedClue = board.Category[x].Clue[y];
+                    lblWhat.Text = "\"" + board.Category[x].Name + "\" -> $"
+                        + board.PointValues[y] + " Clue";
                     tbClue.Focus();
                     tbClue.SelectionStart = tbClue.Text.Length;
                     tbClue.SelectionLength = 0;
@@ -511,13 +514,13 @@ namespace Jeopardy
                     {
                         if (y >= 0)
                         {
-                            tbClue.Text = Jeopardy.Board.Category[x].Clue[y].Question;
-                            tbAnswer.Text = Jeopardy.Board.Category[x].Clue[y].Answer;
+                            tbClue.Text = board.Category[x].Clue[y].Question;
+                            tbAnswer.Text = board.Category[x].Clue[y].Answer;
                         }
                         else
                         {
                             tbClue.Text = String.Empty;
-                            tbAnswer.Text = Jeopardy.Board.Category[x].Name;
+                            tbAnswer.Text = board.Category[x].Name;
                         }
                     }
                     else
@@ -608,7 +611,7 @@ namespace Jeopardy
 
         private void UpdateTitle()
         {
-            string text = "Jeopardy!";
+            string text = Application.ProductName;
             if (HasDocument)
                 text = CurrentDocName + (IsDirty ? "*" : "") + " - " + text;
             Text = text;
@@ -630,7 +633,7 @@ namespace Jeopardy
 
             for (int cat = 0; cat < 6; cat++)
             {
-                Category theCat = Jeopardy.Board.Category[cat];
+                Category theCat = QuizShow.Board.Category[cat];
                 TreeNode catNode = new TreeNode(theCat.Name);
 
                 categoryToNodeMap.Add(theCat, catNode);
