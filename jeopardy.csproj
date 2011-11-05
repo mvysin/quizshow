@@ -1,4 +1,5 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -11,9 +12,11 @@
     <AssemblyName>Jeopardy</AssemblyName>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
-    <OldToolsVersion>2.0</OldToolsVersion>
+    <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -26,7 +29,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -39,6 +41,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <UseVSHostingProcess>false</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -47,6 +50,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -56,62 +60,72 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="rsrc\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Jeopardy</CustomToolNamespace>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="Board.cs" />
-    <Compile Include="FullScreenWin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GameBoardButton.cs">
-    </Compile>
-    <Compile Include="GameBoardView.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="GameTree.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="GameWin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="JeopardyClues.cs">
-      <DependentUpon>JeopardyClues.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Main.cs" />
-    <Compile Include="MainWin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MRUFileList.cs" />
-    <Compile Include="PresenterWin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ResourceFont.cs" />
-    <Compile Include="Resources.Designer.cs">
+    <Compile Include="rsrc\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ScreenConfigurationPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="SelectWindowForm.cs">
+    <Compile Include="src\AssemblyInfo.cs" />
+    <Compile Include="src\Board.cs" />
+    <Compile Include="src\FullScreenWin.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="src\GameBoardButton.cs" />
+    <Compile Include="src\GameBoardView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\GameTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\GameWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Main.cs" />
+    <Compile Include="src\MainWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\MRUFileList.cs" />
+    <Compile Include="src\PresenterWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\ResourceFont.cs" />
+    <Compile Include="src\ScreenConfigurationPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\SelectWindowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xsd\JeopardyClues.cs">
+      <DependentUpon>JeopardyClues.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="NewDocumentHS.png" />
-    <None Include="openHS.png" />
-    <Content Include="sample.xml" />
-    <None Include="saveHS.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="enchanted.ttf" />
-    <None Include="JeopardyClues.xsd">
-      <SubType>
-      </SubType>
+    <Content Include="rsrc\NewDocumentHS.png" />
+    <Content Include="rsrc\openHS.png" />
+    <Content Include="rsrc\saveHS.png" />
+    <Content Include="sample\sample.xml" />
+    <Content Include="sample\states.xml" />
+    <Content Include="sample\test.xml" />
+    <Content Include=".gitignore" />
+    <None Include="rsrc\enchanted.ttf" />
+    <None Include="xsd\JeopardyClues.xsd">
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
       <Visible>False</Visible>
       <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
@@ -127,12 +141,11 @@
       <ProductName>.NET Framework 3.5</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

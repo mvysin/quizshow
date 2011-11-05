@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Jeopardy")]
+[assembly: AssemblyTitle("Jeopardy Projector")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Michael Vysin")]
-[assembly: AssemblyProduct("Jeopardy")]
-[assembly: AssemblyCopyright("Copyright © Michael Vysin 2009")]
-[assembly: AssemblyTrademark("Jeopardy is a registered trademark of Sony Picture Studios, Inc.")]
+[assembly: AssemblyProduct("Jeopardy Projector")]
+[assembly: AssemblyCopyright("Copyright © Michael Vysin 2011")]
+[assembly: AssemblyTrademark("(Jeopardy is a registered trademark of Sony Picture Studios, Inc.)")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
@@ -29,6 +29,6 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("2.0.*")]                // assembly (for updating)
-[assembly: AssemblyFileVersion("2.0.2.0")]          // file (for updating)
+[assembly: AssemblyVersion("2.1.*")]                // assembly (for updating)
+[assembly: AssemblyFileVersion("2.1.0.0")]          // file (for updating)
 [assembly: AssemblyInformationalVersion("2.0")]     // registry
